@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Test User",
+      "email": "test@example.com",
+      "password": "password123"
+    },
+    {
+      "id": "4361",
+      "name": "KGOPOTSO MANGENA",
+      "email": "kgopotsomangena42@gmail.com",
+      "password": "07130@Kgo"
+    },
+    {
+      "id": "317b",
+      "name": "KGOPOTSO MANGENA",
+      "email": "kgopotsomangena42@gmail.com",
+      "password": "07130@Kgo"
+    }
+  ],
+  "jobs": []
+}

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navigate } from 'react-router-dom';
 
 type Props = {
@@ -6,8 +5,8 @@ type Props = {
 };
 
 const ProtectedRoute: React.FC<Props> = ({ children }) => {
-  const isLoggedIn = localStorage.getItem('user');
-  return isLoggedIn ? children : <Navigate to="/LoginPage" replace />;
+  const user = localStorage.getItem('user');
+  return user ? <>{children}</> : <Navigate to="/login" />;
 };
 
 export default ProtectedRoute;
