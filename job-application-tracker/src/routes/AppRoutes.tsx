@@ -2,7 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Landing from '../pages/Landing';
 import Register from '../pages/Register';  
-import Login from '../pages/Login';
+import Login from '../pages/LoginPage';
 import Home from '../pages/Home';          
 import JobDetails from '../pages/JobDetails'; 
 import NotFound from '../pages/NotFound';

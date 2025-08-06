@@ -7,7 +7,7 @@ type Props = {
 
 const ProtectedRoute: React.FC<Props> = ({ children }) => {
   const isLoggedIn = localStorage.getItem('user');
-  return isLoggedIn ? children : <Navigate to="/login" replace />;
+  return isLoggedIn ? children : <Navigate to="/LoginPage" replace />;
 };
 
 export default ProtectedRoute;
