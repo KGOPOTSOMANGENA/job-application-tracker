@@ -1,0 +1,36 @@
+.container {
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.searchInput {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 250px;
+}
+
+.jobList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.jobCard {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 250px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: box-shadow 0.2s;
+}
+
+.jobCard:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
