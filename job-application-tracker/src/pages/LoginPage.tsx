@@ -23,7 +23,7 @@ const LoginPage: React.FC = () => {
 
       if (data.length > 0) {
         localStorage.setItem('user', JSON.stringify(data[0]));
-        navigate('/dashboard'); // ✅ Route exists later
+        navigate('/dashboard'); 
       } else {
         setError('Invalid email or password');
       }
