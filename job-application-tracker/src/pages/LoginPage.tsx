@@ -18,7 +18,7 @@ const LoginPage: React.FC = () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:3000/users?email=${email}&password=${password}`);
+      const res = await fetch(`http://localhost:5000/users?email=${email}&password=${password}`);
       const data = await res.json();
 
       if (data.length > 0) {

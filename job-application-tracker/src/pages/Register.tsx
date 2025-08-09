@@ -20,7 +20,7 @@ const Register: React.FC = () => {
     }
 
     try {
-      const existingUserRes = await fetch(`http://localhost:3000/users?email=${email}`);
+      const existingUserRes = await fetch(`http://localhost:5000/users?email=${email}`);
       const existingUser = await existingUserRes.json();
 
       if (existingUser.length > 0) {

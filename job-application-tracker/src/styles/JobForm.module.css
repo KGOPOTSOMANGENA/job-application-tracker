@@ -9,7 +9,6 @@
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
-
 input, select, textarea {
   padding: 10px;
   font-size: 16px;
@@ -20,13 +19,13 @@ input, select, textarea {
 button {
   padding: 12px;
   font-size: 16px;
-  background-color: #333;
+  background-color: #003366;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 35px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #111;
+  background-color: #003366a2;
 }

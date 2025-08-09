@@ -10,18 +10,25 @@ const HomePage: React.FC = () => {
   const [sortOrder, setSortOrder] = useState('newest');
   const navigate = useNavigate();
 
+  const handleLogout = () => {
+    navigate('/login');
+  };
+
   useEffect(() => {
-    fetch('http://localhost:3000/jobs')
+    fetch('http://localhost:5000/jobs')
       .then((res) => res.json())
-      .then((data) => setJobs(data))
+      .then((data) => {
+        console.log('Fetched jobs:', data); 
+        setJobs(data);
+      })
       .catch((err) => console.error('Error fetching jobs:', err));
   }, []);
 
   const handleDelete = async (id: number) => {
-    await fetch(`http://localhost:3000/jobs/${id}`, {
+    await fetch(`http://localhost:5000/jobs/${id}`, {
       method: 'DELETE',
     });
-    setJobs(jobs.filter((job) => job.id !== id));
+    setJobs((prevJobs) => prevJobs.filter((job) => job.id !== id));
   };
 
   const filteredJobs = jobs
@@ -30,7 +37,10 @@ const HomePage: React.FC = () => {
       job.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
       job.location.toLowerCase().includes(searchQuery.toLowerCase())
     )
-    .filter((job) => filterStatus === 'all' || job.status === filterStatus)
+    .filter((job) =>
+      filterStatus === 'all' ||
+      job.status?.toLowerCase().trim() === filterStatus.toLowerCase().trim()
+    )
     .sort((a, b) => {
       if (sortOrder === 'newest') {
         return b.id - a.id;
@@ -43,45 +53,56 @@ const HomePage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <h2>Job Dashboard</h2>
+      <nav className={styles.navbar}>
+        <div className={styles.header}>
+          <h2 className={styles.navTitle}>Job Dashboard</h2>
 
-        <div className={styles.controls}>
-          <input
-            type="text"
-            placeholder="Search by title, company, or location"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className={styles.searchInput}
-          />
+          <div className={styles.controls}>
+            <input
+              type="text"
+              placeholder="Search by title, company, or location"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className={styles.searchInput}
+            />
 
-          <select
-            value={filterStatus}
-            onChange={(e) => setFilterStatus(e.target.value)}
-            className={styles.select}
-          >
-            <option value="all">All</option>
-            <option value="applied">Applied</option>
-            <option value="interview">Interview</option>
-            <option value="rejected">Rejected</option>
-            <option value="offer">Offer</option>
-          </select>
+            <select
+              value={filterStatus}
+              onChange={(e) => setFilterStatus(e.target.value)}
+              className={styles.select}
+            >
+              <option value="all">All</option>
+              <option value="applied">Applied</option>
+              <option value="interview">Interview</option>
+              <option value="rejected">Rejected</option>
+              <option value="offer">Offer</option>
+            </select>
 
-          <select
-            value={sortOrder}
-            onChange={(e) => setSortOrder(e.target.value)}
-            className={styles.select}
-          >
-            <option value="newest">Newest</option>
-            <option value="oldest">Oldest</option>
-            <option value="az">A - Z</option>
-          </select>
+            <select
+              value={sortOrder}
+              onChange={(e) => setSortOrder(e.target.value)}
+              className={styles.select}
+            >
+              <option value="newest">Newest</option>
+              <option value="oldest">Oldest</option>
+              <option value="az">A - Z</option>
+            </select>
 
-          <button onClick={() => navigate('/add-job')} className={styles.addButton}>
-            + Add Job
-          </button>
+            <button
+              onClick={() => navigate('/add-job')}
+              className={styles.addButton}
+            >
+              + Add Job
+            </button>
+            <button
+              onClick={handleLogout}
+              className={styles.logoutButton}
+            >
+              Logout
+            </button>
+          </div>
         </div>
-      </div>
+      </nav>
 
       <div className={styles.jobList}>
         {filteredJobs.length === 0 ? (
@@ -121,6 +142,4 @@ const HomePage: React.FC = () => {
     </div>
   );
 };
-
 export default HomePage;
-

@@ -8,7 +8,7 @@ const AddJob: React.FC = () => {
 
   const handleAddJob = async (newJob: Omit<Job, 'id'>) => {
     try {
-      await fetch('http://localhost:3000/jobs', {
+      await fetch('http://localhost:5000/jobs', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newJob),

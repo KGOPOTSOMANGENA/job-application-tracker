@@ -15,7 +15,7 @@ const Landing = () => {
       <h2 className="how-it-works-title">HOW IT WORKS</h2>
       <div className="how-it-works-boxes">
         <div className="feature-box">
-          <h3>Add The</h3>
+          <h3>Add The Job</h3>
           <ul>
             <li>Company name</li>
             <li>Role</li>

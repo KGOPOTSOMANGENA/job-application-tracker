@@ -9,7 +9,7 @@ const JobDetails: React.FC = () => {
   const [job, setJob] = useState<Job | null>(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/jobs/${id}`)
+    fetch(`http://localhost:5000/jobs/${id}`)
       .then((res) => res.json())
       .then((data) => setJob(data))
       .catch((err) => console.error('Error fetching job details:', err));

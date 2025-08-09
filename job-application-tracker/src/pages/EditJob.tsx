@@ -16,7 +16,7 @@ const EditJob: React.FC = () => {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:3000/jobs/${id}`)
+    fetch(`http://localhost:5000/jobs/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setJob(data);
@@ -37,7 +37,7 @@ const EditJob: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    await fetch(`http://localhost:3000/jobs/${id}`, {
+    await fetch(`http://localhost:5000/jobs/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
