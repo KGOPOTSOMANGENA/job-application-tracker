@@ -116,6 +116,37 @@
   font-size: 14px;
   color: #444;
 }
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.actions button {
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.actions button:first-child {
+  background-color: #007bff; 
+  color: white;
+}
+
+.actions button:first-child:hover {
+  background-color: #0056b3;
+}
+.actions button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+.actions button:last-child:hover {
+  background-color: #a71d2a;
+}
 
 @media (max-width: 1200px) {
   .container {
@@ -158,7 +189,6 @@
   }
 }
 
-/* 320px and below */
 @media (max-width: 320px) {
   .container {
     padding: 20px;

@@ -75,18 +75,21 @@ button {
   border: none;
   cursor: pointer;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 0px;
 }
 
 .primary-button {
   background-color: #007bff;
+  border-radius: 5px; 
   color: white;
 }
 
 .secondary-button {
   background-color: #28a745;
+  border-radius: 5px; 
   color: white;
 }
+
 @media (max-width: 320px) {
   .landing-container {
     padding: 2rem 1rem;

@@ -27,20 +27,28 @@
   ],
   "jobs": [
     {
-      "id": "402d",
-      "title": "Business Analyst",
-      "company": "Mlab",
-      "location": "Polokwane ",
-      "status": "Applied",
-      "description": "ueigeg0e0g0egygy38gy32geg20y34geg"
-    },
-    {
       "id": "a87f",
       "title": "Project Maneger ",
       "company": "Mlab",
       "location": "Gauteng",
-      "status": "interview",
+      "status": "rejected",
       "description": "fbrwbdvdvewwq9fqwf9owgfw"
+    },
+    {
+      "id": "475f",
+      "title": "Businnes analyst ",
+      "company": "mlab",
+      "location": "polokwane",
+      "status": "Applied",
+      "description": "ejwgfhewugihewiguewhguewi"
+    },
+    {
+      "id": "0b7b",
+      "title": "Web developer",
+      "company": "Net campus ",
+      "location": "Midrand",
+      "status": "Offer",
+      "description": "brbrr"
     }
   ]
 }
