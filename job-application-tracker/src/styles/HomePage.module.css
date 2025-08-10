@@ -3,6 +3,7 @@
   max-width: 1000px;
   margin: 0 auto;
 }
+
 .navbar {
   background-color: #003366; 
   padding: 16px 24px;
@@ -17,12 +18,14 @@
   gap: 20px;
   flex-wrap: wrap;
 }
+
 .navTitle {
   color: white;
   font-size: 24px;
   margin: 0;
   flex-shrink: 0;
 }
+
 .controls {
   display: flex;
   gap: 12px;
@@ -31,6 +34,7 @@
   flex-grow: 1;
   justify-content: flex-end;
 }
+
 .searchInput {
   padding: 10px;
   font-size: 16px;
@@ -38,6 +42,7 @@
   border: 1px solid #ccc;
   border-radius: 6px;
 }
+
 .select {
   padding: 8px;
   font-size: 16px;
@@ -47,6 +52,7 @@
   min-width: 120px;
   cursor: pointer;
 }
+
 .addButton {
   background-color: #ff9900;
   border: none;
@@ -62,6 +68,7 @@
 .addButton:hover {
   background-color: #e68a0091;
 }
+
 .logoutButton {
   background-color: #cc0000;
   border: none;
@@ -78,11 +85,13 @@
 .logoutButton:hover {
   background-color: #99000093;
 }
+
 .jobList {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
+
 .jobCard {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -91,16 +100,76 @@
   cursor: pointer;
   transition: transform 0.2s ease;
 }
+
 .jobCard:hover {
   transform: scale(1.02);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 .jobCard h3 {
   margin-top: 0;
   font-size: 20px;
 }
+
 .jobCard p {
   margin: 4px 0;
   font-size: 14px;
   color: #444;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 40px;
+  }
+}
+@media (max-width: 1024px) {
+  .controls {
+    justify-content: center;
+  }
+  .navTitle {
+    font-size: 22px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 30px;
+  }
+  .searchInput {
+    width: 150px;
+    font-size: 14px;
+  }
+  .addButton, .logoutButton {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .searchInput, .select, .addButton, .logoutButton {
+    width: 100%;
+  }
+}
+
+/* 320px and below */
+@media (max-width: 320px) {
+  .container {
+    padding: 20px;
+  }
+  .navTitle {
+    font-size: 18px;
+  }
+  .jobCard h3 {
+    font-size: 16px;
+  }
+  .jobCard p {
+    font-size: 12px;
+  }
 }
