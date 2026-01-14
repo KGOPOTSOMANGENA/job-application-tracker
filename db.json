@@ -39,16 +39,32 @@
       "title": "Businnes analyst ",
       "company": "mlab",
       "location": "polokwane",
-      "status": "Applied",
+      "status": "applied",
       "description": "ejwgfhewugihewiguewhguewi"
     },
     {
-      "id": "0b7b",
-      "title": "Web developer",
-      "company": "Net campus ",
-      "location": "Midrand",
-      "status": "Offer",
-      "description": "brbrr"
+      "id": "0361",
+      "title": "Software Developer",
+      "company": "SETA",
+      "location": "Pretoria",
+      "status": "interview",
+      "description": "mefegegwg"
+    },
+    {
+      "id": "3e06",
+      "title": "ui/ux desing ",
+      "company": "rico south africa",
+      "location": "sandton",
+      "status": "applied",
+      "description": "i am a new intern there \n"
+    },
+    {
+      "id": "0e68",
+      "title": "software developer ",
+      "company": "RICO",
+      "location": "randburg",
+      "status": "offer",
+      "description": "rhjgrhgj"
     }
   ]
 }
