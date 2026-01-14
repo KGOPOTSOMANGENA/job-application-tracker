@@ -1,4 +1,5 @@
-import { Navigate } from 'react-router-dom';
+import React from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
 
 type Props = {
   children: React.ReactNode;
@@ -6,7 +7,16 @@ type Props = {
 
 const ProtectedRoute: React.FC<Props> = ({ children }) => {
   const user = localStorage.getItem('user');
-  return user ? <>{children}</> : <Navigate to="/login" />;
+  const location = useLocation();
+
+  if (!user) {
+    // Redirect to login, but remember where user wanted to go
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+
+  return <>{children}</>;
 };
 
 export default ProtectedRoute;
+
+
