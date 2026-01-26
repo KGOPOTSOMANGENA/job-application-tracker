@@ -1,69 +1,141 @@
-# React + TypeScript + Vite
+📌 Job Application Tracker
+📖 Project Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Job Application Tracker is a web-based application that helps users manage, track, and organize their job applications efficiently. The system allows users to record job details, monitor application progress, and sort or filter applications based on different criteria.
 
-Currently, two official plugins are available:
+This project simulates a real-world job tracking system and applies modern frontend development practices using React, TypeScript, and JSON Server.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🎯 Key Features
 
-## Expanding the ESLint configuration
+User registration and login
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Protected routes (authenticated users only)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Add, update, and delete job applications
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Track application status:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Applied
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Interviewed
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Rejected
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Sorting functionality:
+
+Sort by application status (Applied / Rejected)
+
+Sort alphabetically (A–Z)
+
+URL query support for filtering and sorting
+
+Responsive and clean UI
+
+Centralized state management using React Context
+
+Mock backend using JSON Server (JavaScript database)
+
+🛠️ Tech Stack
+
+Frontend: React, TypeScript
+
+Styling: CSS
+
+Routing: React Router DOM
+
+State Management: React Context API
+
+Custom Hooks: Reusable logic abstraction
+
+Backend (Mock API): JSON Server
+
+Build Tool: Vite
+
+Deployment: GitHub Pages
+
+Version Control: Git & GitHub
+
+📂 Project Structure
+src/
+ ┣ assets/        # Images and static assets
+ ┣ components/    # Reusable UI components
+ ┣ context/       # Global state management (Context API)
+ ┣ hooks/         # Custom React hooks
+ ┣ pages/         # Application pages (Landing, Dashboard, Login, Register)
+ ┣ routes/        # Protected and public routes
+ ┣ services/      # API and data handling logic
+ ┣ styles/        # Global and page-specific styles
+ ┣ types/         # TypeScript type definitions
+ ┣ utils/         # Utility functions
+ ┣ App.tsx
+ ┣ main.tsx
+ ┗ index.css
+
+🔐 Protected Routing
+
+The application uses protected routes to ensure that only authenticated users can access sensitive pages such as the dashboard. Unauthenticated users are redirected to the login page.
+
+🔄 Sorting & Filtering
+
+Users can:
+
+Sort job applications by status (Applied, Rejected)
+
+Sort applications alphabetically (A–Z)
+
+Use URL query parameters to maintain sorting and filtering state
+
+This allows bookmarking and sharing of filtered dashboard views.
+
+/***⚙️ Installation & Setup*\
+1️⃣ Clone the repository
+git clone (https://github.com/KGOPOTSOMANGENA/job-application-tracker.git)
+cd job-application-tracker
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Start JSON Server (Port 5000)
+npx json-server --watch db.json --port 5000
+
+4️⃣ Run the application
+npm run dev
+
+
+The application will be available at:
+
+http://localhost:5173
+
+🧪 Sample API Endpoints
+GET    /jobs
+POST   /jobs
+PUT    /jobs/:id
+DELETE /jobs/:id
+
+📱 Responsiveness
+
+The UI is fully responsive and adapts seamlessly across:
+
+Desktop screens
+
+Tablets
+
+Mobile devices
+
+🚀 Future Enhancements
+
+Role-based authentication
+
+Advanced search and filters
+
+Job analytics and insights
+
+Notifications and reminders
+
+Integration with a real backend API
+
+👨‍💻 Author
+
+Kgopotso Mangena
+Informatics Graduate
+Aspiring Software Developer & Business Analyst
